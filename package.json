@@ -1,10 +1,10 @@
 {
   "name": "conversor-ui-angular",
-  "description": "Conversor AngularJS + Play2",
+  "description": "Conversor AngularJS",
   "author": "",
   "dependencies": {
-    "angular": "^1.5.8",
-    "angular-animate": "^1.5.8",
+    "angular": "^1.6.4",
+    "angular-animate": "^1.6.4",
     "bootstrap": "^3.3.5",
     "jquery": "^2.1.4"
   }
