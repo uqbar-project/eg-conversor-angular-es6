@@ -5,8 +5,8 @@ class Conversor {
 		this.kilometros = ' <ingrese millas> '
 	}	
 
-    convertir() {
-        this.kilometros = this.millas * 1.60934
-    }
+	convertir() {
+		this.kilometros = this.millas * 1.60934
+	}
 
 }
