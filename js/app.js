@@ -1,7 +1,7 @@
 (() => {
     'use strict';
 
-    var app = angular.module('conversorApp', [])
+    let app = angular.module('conversorApp', [])
 
     /* Controllers */
     app.controller('conversorCtrl', () => {
