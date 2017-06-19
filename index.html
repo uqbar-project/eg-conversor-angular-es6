@@ -35,23 +35,23 @@
 							<input 
 								name="millas"
 								class="form-control" 
-								ng-model="conversorCtrl.millas"
+								ng-model="conversorCtrl.conversorService.millas"
 								required="true"
 								ng-pattern="/^[0-9]+$/"
 								placeholder="Ingrese la cantidad de millas a convertir"
 								autofocus="autofocus">
 						</div>
-						<div class="form-group">
+						<div class="form-group" ng-controller="conversor2Ctrl as conversor2Ctrl">
 							<label for="kilometros">Kilometros</label>
 							<p class="lead"
-								data-ng-show="convertirForm.millas.$valid">{{conversorCtrl.kilometros | numero}}</p>
+								data-ng-show="convertirForm.millas.$valid">{{conversor2Ctrl.kilometros}}</p>
 						</div>
 						<button type="submit" class="btn btn-primary"
 							data-ng-click="conversorCtrl.convertir()">Convertir</button>
 
 						<div ng-show="convertirForm.millas.$dirty && convertirForm.millas.$invalid">
 						<br>
-						<div class="alert alert-danger">
+						<div class="alert alert-danger" >
 						Error:
 					      <span ng-show="convertirForm.millas.$error.required">Ingresar millas!</span>
 					      <span ng-show="convertirForm.millas.$error.pattern">Formato debe ser numerico</span>

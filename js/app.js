@@ -1,21 +1,18 @@
-(() => {
-    'use strict';
+class ConversorController {
+    constructor(conversorService) {
+        this.conversorService = conversorService
+    }
 
-    let app = angular.module('conversorApp', [])
+    convertir() {
+        console.log("convertir del controller")
+        this.conversorService.convertir()
+    }
+}
 
-    /* Controller */
-    app.controller('conversorCtrl', () => {
-        return new Conversor()
+/** Definición de controllers y services */
+angular.module('conversorApp', [])
+    .service('conversorService', Conversor) 
+    .controller('conversorCtrl', ConversorController)
+    .controller('conversor2Ctrl', (conversorService) => {
+        return conversorService
     })
-
-    /** Filter, muestra un número con coma decimal */
-    app.filter('numero', () => {
-        return (input) => {
-            if (input === null || isNaN(input)) {
-                return "Ingrese un número"
-            }
-            return input.toString().replace('.', ',')
-        }
-    })
-
-})()

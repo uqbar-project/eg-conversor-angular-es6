@@ -6,6 +6,7 @@ class Conversor {
 	}	
 
 	convertir() {
+		console.log("convertir del dominio")
 		this.kilometros = this.millas * 1.60934
 	}
 
