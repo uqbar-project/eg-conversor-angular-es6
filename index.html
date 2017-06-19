@@ -44,7 +44,7 @@
 						<div class="form-group">
 							<label for="kilometros">Kilometros</label>
 							<p class="lead"
-								data-ng-show="convertirForm.millas.$valid">{{conversorCtrl.kilometros}}</p>
+								data-ng-show="convertirForm.millas.$valid">{{conversorCtrl.kilometros | numero}}</p>
 						</div>
 						<button type="submit" class="btn btn-primary"
 							data-ng-click="conversorCtrl.convertir()">Convertir</button>
