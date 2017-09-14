@@ -1,5 +1,5 @@
 // Karma configuration
-// Generated on Fri Jun 23 2017 10:49:28 GMT-0300 (ART)
+// Generated on Thu Aug 31 2017 12:44:54 GMT-0300 (ART)
 
 module.exports = function(config) {
   config.set({
@@ -15,8 +15,9 @@ module.exports = function(config) {
 
     // list of files / patterns to load in the browser
     files: [
-      './js/conversor.js',
-      './js/tests/*.js'
+      'node_modules/angular/angular.js',
+      'src/**.js',
+      'spec/**.js'
     ],
 
 
@@ -28,8 +29,23 @@ module.exports = function(config) {
     // preprocess matching files before serving them to the browser
     // available preprocessors: https://npmjs.org/browse/keyword/karma-preprocessor
     preprocessors: {
+      'src/**/*.js': ['babel'],
+      'spec/**/*.js': ['babel']
     },
 
+    // Babel preprocessor specific configuration
+    babelPreprocessor: {
+      options: {
+        presets: ['es2015'], // use the es2015 preset
+        sourceMap: 'inline' // inline source maps inside compiled files
+      },
+      filename: function (file) {
+        return file.originalPath.replace(/\.js$/, '.es5.js');
+      },
+      sourceFileName: function (file) {
+        return file.originalPath;
+      }
+    },
 
     // test results reporter to use
     // possible values: 'dots', 'progress'
@@ -56,12 +72,12 @@ module.exports = function(config) {
 
     // start these browsers
     // available browser launchers: https://npmjs.org/browse/keyword/karma-launcher
-    browsers: ['Chrome'],
+    browsers: ['PhantomJS'],
 
 
     // Continuous Integration mode
     // if true, Karma captures browsers, runs the tests and exits
-    singleRun: false,
+    singleRun: true,
 
     // Concurrency level
     // how many browser should be started simultaneous

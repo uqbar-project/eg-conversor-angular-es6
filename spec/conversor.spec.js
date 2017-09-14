@@ -7,8 +7,8 @@ describe('Tests para el conversor - objeto de dominio', () => {
          conversor.convertir()
     })
 
-    it('Convertir 100 millas debe dar 169.0344 kilometros', () => {
-        expect(160.2934).toBe(conversor.kilometros)
+    it('Convertir 100 millas debe dar 160.934 kilometros', () => {
+        expect(160.934).toBe(conversor.kilometros)
     })
 
     it('Un conversor inicial no tiene kilometros definidos', () => {

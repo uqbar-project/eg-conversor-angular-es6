@@ -1,9 +1,7 @@
 const app = angular.module('conversorApp', [])
 
 /* Controller */
-app.controller('conversorCtrl', () => {
-    return new Conversor()
-})
+app.controller('conversorCtrl', () => new Conversor())
 
 /** Filter, muestra un número con coma decimal */
 app.filter('numero', () => {
